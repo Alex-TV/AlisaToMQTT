@@ -1,6 +1,7 @@
 ﻿using System.Text.Json.Serialization;
+using AlisaToMQTTServer.SmartThings.InfoRepository.Models.Signification;
 
-namespace AlisaToMQTTServer.SmartThings.Models
+namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models.Parameters
 {
     [JsonSerializable(typeof(SmartThingsColorSettingParametersModel))]
     public class SmartThingsColorSettingParametersModel

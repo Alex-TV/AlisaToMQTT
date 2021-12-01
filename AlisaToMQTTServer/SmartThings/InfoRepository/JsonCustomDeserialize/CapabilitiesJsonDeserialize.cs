@@ -1,8 +1,7 @@
-﻿
-using System.Text.Json;
-using AlisaToMQTTServer.SmartThings.Models;
+﻿using System.Text.Json;
+using AlisaToMQTTServer.SmartThings.InfoRepository.Models.Capabilities;
 
-namespace AlisaToMQTTServer.SmartThings.JsonCustomDeserialize
+namespace AlisaToMQTTServer.SmartThings.InfoRepository.JsonCustomDeserialize
 {
     public static class CapabilitiesJsonSerializer
     {

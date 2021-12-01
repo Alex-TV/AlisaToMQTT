@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using AlisaToMQTTServer.Data;
+using AlisaToMQTTServer.SmartThings.InfoRepository;
 
 namespace AlisaToMQTTServer.SmartThings.Builder
 {
@@ -7,7 +7,7 @@ namespace AlisaToMQTTServer.SmartThings.Builder
     {
         public static void Build(ServiceCollection services)
         {
-            services.AddSingleton<ISmartThingsDataRepository, SmartThingsDataRepository>();
+            services.AddSingleton<ISmartThingsDataInfoRepository, SmartThingsDataInfoRepository>();
         }
     }
 }

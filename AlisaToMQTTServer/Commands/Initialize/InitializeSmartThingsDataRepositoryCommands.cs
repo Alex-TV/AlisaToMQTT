@@ -1,12 +1,12 @@
-﻿using AlisaToMQTTServer.SmartThings;
+﻿using AlisaToMQTTServer.SmartThings.InfoRepository;
 
 namespace AlisaToMQTTServer.Commands.Initialize
 {
     public class InitializeSmartThingsDataRepositoryCommands : Command
     {
-        private readonly ISmartThingsDataRepository _thingsDataRepository;
+        private readonly ISmartThingsDataInfoRepository _thingsDataRepository;
 
-        public InitializeSmartThingsDataRepositoryCommands(ISmartThingsDataRepository thingsDataRepository)
+        public InitializeSmartThingsDataRepositoryCommands(ISmartThingsDataInfoRepository thingsDataRepository)
         {
             _thingsDataRepository = thingsDataRepository;
         }

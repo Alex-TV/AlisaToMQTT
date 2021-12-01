@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace AlisaToMQTTServer.SmartThings.Models
+namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models.Capabilities
 {
     [JsonSerializable(typeof(SmartThingsCapabilitiesModel))]
     public abstract class SmartThingsCapabilitiesModel

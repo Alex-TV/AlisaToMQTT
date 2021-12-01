@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using AlisaToMQTTServer.SmartThings.Models;
+using AlisaToMQTTServer.SmartThings.InfoRepository.Models.Capabilities;
 
-namespace AlisaToMQTTServer.SmartThings.JsonCustomDeserialize
+namespace AlisaToMQTTServer.SmartThings.InfoRepository.JsonCustomDeserialize
 {
     public class SmartThingsCapabilitiesConverterWithTypeDiscriminator : JsonConverter<SmartThingsCapabilitiesModel>
     {

@@ -1,16 +1,16 @@
 ﻿using System.Text.Json;
-using AlisaToMQTTServer.SmartThings;
-using AlisaToMQTTServer.SmartThings.JsonCustomDeserialize;
-using AlisaToMQTTServer.SmartThings.Models;
+using AlisaToMQTTServer.Data;
+using AlisaToMQTTServer.SmartThings.InfoRepository.JsonCustomDeserialize;
+using AlisaToMQTTServer.SmartThings.InfoRepository.Models;
 
-namespace AlisaToMQTTServer.Data
+namespace AlisaToMQTTServer.SmartThings.InfoRepository
 {
-    public class SmartThingsDataRepository : ISmartThingsDataRepository
+    public class SmartThingsDataInfoRepository : ISmartThingsDataInfoRepository
     {
         private readonly IDataProvider _dataProvider;
         private Dictionary<SmartThingsTypes, List<SmartThingsModel>> _repository = new Dictionary<SmartThingsTypes, List<SmartThingsModel>>();
 
-        public SmartThingsDataRepository(IDataProvider dataProvider)
+        public SmartThingsDataInfoRepository(IDataProvider dataProvider)
         {
             _dataProvider = dataProvider;
         }
