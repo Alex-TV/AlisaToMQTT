@@ -1,0 +1,71 @@
+﻿{
+    "id": "ECE2C875-27E4-434E-8186-F08B4D54C3CA",
+    "name": "Свет",
+    "description": "description",
+    "room": "Комната",
+    "type": "devices.types.light",
+    "custom_data": {
+        "mqtt": [
+            {
+                "type": "on",
+                "set": "/devices/yandex/controls/light1/on",
+                "stat": "/devices/yandex/controls/light1"
+            },
+            {
+                "type": "rgb",
+                "set": "/devices/yandex/controls/light3/on",
+                "stat": "/devices/yandex/controls/light3"
+            },
+            {
+                "type": "temperature_k",
+                "set": "/devices/yandex/controls/light4/on",
+                "stat": "/devices/yandex/controls/light4"
+            },
+            {
+                "type": "brightness",
+                "set": "/devices/yandex/controls/light5/on",
+                "stat": "/devices/yandex/controls/light5"
+            }
+        ]
+    },
+
+    "capabilities": [
+        {
+            "type": "devices.capabilities.range",
+            "retrievable": true,
+            "parameters": {
+                "instance": "brightness",
+                "random_access": true,
+                "range": {
+                    "max": 100,
+                    "min": 1,
+                    "precision": 1
+                },
+                "unit": "unit.percent"
+            }
+        },
+        {
+            "type": "devices.capabilities.color_setting",
+            "retrievable": true,
+            "parameters": {
+                "color_model": "hsv",
+                "temperature_k": {
+                    "max": 5600,
+                    "min": 5600
+                }
+            }
+        },
+        {
+            "type": "devices.capabilities.on_off",
+            "retrievable": true
+        }
+    ],
+    "properties": [],
+
+    "device_info": {
+        "manufacturer": "alex home",
+        "model": "do-do",
+        "hw_version": "0.0.1",
+        "sw_version": "0.0.1"
+    }
+}

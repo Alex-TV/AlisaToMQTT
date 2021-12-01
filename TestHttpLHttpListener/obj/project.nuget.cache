@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "jatz/WY5XT/bjtaYz2fl+KgwZPBJdYP2r9McPPfHAESvuQSsfGRV9BjMGPI8n2QrDLMbzovDCWOtRAA/+UHiXw==",
+  "success": true,
+  "projectFilePath": "D:\\Project\\Net\\Linux\\TestHttpLHttpListener\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\koval\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\koval\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\koval\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
+    "C:\\Users\\koval\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
