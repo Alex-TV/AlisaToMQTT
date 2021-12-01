@@ -2,84 +2,32 @@
 
 namespace TestHttpLHttpListener.SmartThings.Models
 {
-    public interface ISmartThingsParametersModel
-    {
-
-    }
-
-    public interface ISmartThingsPropertiesModel
-    {
-
-    }
-
-    [JsonSerializable(typeof(SmartThingsCapabilitiesModel))]
-    public class SmartThingsCapabilitiesModel
-    {
-        [JsonInclude]
-        [JsonPropertyName("type")]
-        public string CapabilitiesType { get; }
-        [JsonInclude]
-        [JsonPropertyName("retrievable")]
-        public bool Retrievable { get; }
-
-        public ISmartThingsParametersModel Parameters { get; }
-
-        public SmartThingsCapabilitiesModel(string capabilitiesType, bool retrievable)
-        {
-            CapabilitiesType = capabilitiesType;
-            Retrievable = retrievable;
-        }
-    }
-
-    [JsonSerializable(typeof(SmartThingsModel))]
+    //[JsonSerializable(typeof(SmartThingsModel))]
     public class SmartThingsModel
     {
         [JsonInclude]
         [JsonPropertyName("id")]
-        public string Id { get; }
+        public string? Id { get; init; }
         [JsonInclude]
         [JsonPropertyName("name")]
-        public string Name { get; }
+        public string? Name { get; init; }
         [JsonInclude]
         [JsonPropertyName("description")]
-        public string Description { get; }
+        public string? Description { get; init; }
         [JsonInclude]
         [JsonPropertyName("room")]
-        public string Room { get; }
+        public string? Room { get; init; }
         [JsonInclude]
         [JsonPropertyName("type")]
-        public string Type { get; }
+        public string? Type { get; init; }
         [JsonInclude]
         [JsonPropertyName("custom_data")]
-        public SmartThingsMqttContainerModel CustomData { get; }
+        public SmartThingsMqttContainerModel? CustomData { get; init; }
         [JsonInclude]
         [JsonPropertyName("capabilities")]
-        public List<SmartThingsCapabilitiesModel> Capabilities { get; }
-
-        public ISmartThingsPropertiesModel Properties { get; }
+        public List<SmartThingsCapabilitiesModel>? Capabilities { get; init; }
         [JsonInclude]
         [JsonPropertyName("device_info")]
-        public SmartThingsDeviceInfoModel DeviceInfo { get; }
-
-        public SmartThingsModel(string id,
-                                string name,
-                                string description,
-                                string room,
-                                string type,
-                                SmartThingsMqttContainerModel customData,
-                                List<SmartThingsCapabilitiesModel> capabilities,
-                                ISmartThingsPropertiesModel properties,
-                                SmartThingsDeviceInfoModel deviceInfo)
-        {
-            Id = id;
-            Name = name;
-            Description = description;
-            Room = room;
-            Type = type;
-            CustomData = customData;
-            Capabilities = capabilities;
-            Properties = properties;
-            DeviceInfo = deviceInfo;
-        }
+        public SmartThingsDeviceInfoModel? DeviceInfo { get; init; }
     }
 }

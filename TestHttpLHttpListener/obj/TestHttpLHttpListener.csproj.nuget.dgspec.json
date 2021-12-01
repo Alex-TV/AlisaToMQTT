@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\Net\\Linux\\TestHttpLHttpListener\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj": {}
+    "D:\\Project\\NetCore\\AlisaToMQTT\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj": {}
   },
   "projects": {
-    "D:\\Project\\Net\\Linux\\TestHttpLHttpListener\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj": {
+    "D:\\Project\\NetCore\\AlisaToMQTT\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\Net\\Linux\\TestHttpLHttpListener\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj",
+        "projectUniqueName": "D:\\Project\\NetCore\\AlisaToMQTT\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj",
         "projectName": "TestHttpLHttpListener",
-        "projectPath": "D:\\Project\\Net\\Linux\\TestHttpLHttpListener\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj",
+        "projectPath": "D:\\Project\\NetCore\\AlisaToMQTT\\TestHttpLHttpListener\\TestHttpLHttpListener.csproj",
         "packagesPath": "C:\\Users\\koval\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\Net\\Linux\\TestHttpLHttpListener\\TestHttpLHttpListener\\obj\\",
+        "outputPath": "D:\\Project\\NetCore\\AlisaToMQTT\\TestHttpLHttpListener\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\koval\\AppData\\Roaming\\NuGet\\NuGet.Config",

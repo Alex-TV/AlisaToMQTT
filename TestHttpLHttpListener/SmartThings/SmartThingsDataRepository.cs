@@ -1,6 +1,6 @@
-﻿
-using System.Text.Json;
+﻿using System.Text.Json;
 using TestHttpLHttpListener.SmartThings;
+using TestHttpLHttpListener.SmartThings.JsonCustomDeserialize;
 using TestHttpLHttpListener.SmartThings.Models;
 
 namespace TestHttpLHttpListener.Data
@@ -8,6 +8,7 @@ namespace TestHttpLHttpListener.Data
     public class SmartThingsDataRepository : ISmartThingsDataRepository
     {
         private readonly IDataProvider _dataProvider;
+        private Dictionary<SmartThingsTypes, List<SmartThingsModel>> _repository = new Dictionary<SmartThingsTypes, List<SmartThingsModel>>();
 
         public SmartThingsDataRepository(IDataProvider dataProvider)
         {
@@ -16,16 +17,28 @@ namespace TestHttpLHttpListener.Data
 
         public void Initialize()
         {
-            var data = _dataProvider.GetData(SmartThingsTypes.Light.ToString());
-
-            //var test = new SmartThingsModel("d-d", "test", "test d-d", "living", "light");
-
-            //var json = JsonSerializer.Serialize(test);
-            // var lightJson = JsonSerializer.Deserialize<SmartThingsModel>(json);
-            var doc = JsonDocument.Parse(data[0].Data);
-            var capabilities = doc.RootElement.GetProperty("capabilities");
-
-            var lightJson = JsonSerializer.Deserialize<SmartThingsModel>(data[0].Data);  
+            var dataModels = _dataProvider.GetData(SmartThingsTypes.Light.ToString());
+            AddToRepository(SmartThingsTypes.Light, dataModels);
         }
+
+        private void AddToRepository(SmartThingsTypes smartThingsTypes, List<DataModel> dataModels )
+        {
+            var serializeOptions = new JsonSerializerOptions();
+            serializeOptions.Converters.Add(new SmartThingsCapabilitiesConverterWithTypeDiscriminator());
+            foreach (var dataModel in dataModels)
+            {
+                var smartThingsModel = JsonSerializer.Deserialize<SmartThingsModel>(dataModel.Data, serializeOptions);
+                if (smartThingsModel == null)
+                {
+                    continue;
+                }
+                if (!_repository.ContainsKey(SmartThingsTypes.Light))
+                {
+                    _repository[SmartThingsTypes.Light] = new List<SmartThingsModel>();
+                }
+                _repository[SmartThingsTypes.Light].Add(smartThingsModel);
+            }
+        }
+
     }
 }
