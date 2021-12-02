@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using AlisaToMQTTServer.SmartThings.InfoRepository.Models;
 using AlisaToMQTTServer.SmartThings.StateRepository.Models.Capabilities;
 
 namespace AlisaToMQTTServer.SmartThings.StateRepository.Models;
@@ -11,19 +10,13 @@ public sealed class SmartThingsDeviceModel
     [JsonPropertyName("id")]
     public string? Id { get; init; }
     [JsonInclude]
-    [JsonPropertyName("name")]
-    public string? Name { get; init; }
-    [JsonInclude]
-    [JsonPropertyName("description")]
-    public string? Description { get; init; }
-    [JsonInclude]
-    [JsonPropertyName("type")]
-    public string? ThingsType { get; init; }
-    [JsonInclude]
-    [JsonPropertyName("custom_data")]
-    public SmartThingsMqttContainerModel? CustomData { get; init; }
-    [JsonInclude]
     [JsonPropertyName("capabilities")]
     public List<SmartThingsStateCapabilitiesModel>? Capabilities { get; init; }
+    [JsonInclude]
+    [JsonPropertyName("error_code")]
+    public string? ErrorCode { get; init; } //DEVICE_NOT_FOUND
+    [JsonInclude]
+    [JsonPropertyName("error_message")]
+    public string? ErrorMessage { get; init; }//the human readable error message
 }
 

@@ -22,9 +22,9 @@ public sealed class SmartThingsInfoModel
     [JsonInclude]
     [JsonPropertyName("type")]
     public string? ThingsType { get; init; }
-    [JsonInclude]
-    [JsonPropertyName("custom_data")]
-    public SmartThingsMqttContainerModel? CustomData { get; init; }
+    //[JsonInclude]
+    //[JsonPropertyName("custom_data")]
+    //public SmartThingsMqttContainerModel? CustomData { get; init; }
     [JsonInclude]
     [JsonPropertyName("capabilities")]
     public List<SmartThingsInfoCapabilitiesModel>? Capabilities { get; init; }

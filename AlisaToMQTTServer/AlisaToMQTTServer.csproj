@@ -18,9 +18,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="SmartThings\StateRepository\Models\States\" />
-    <Folder Include="SmartThings\StateRepository\JsonCustomDeserialize\" />
-  </ItemGroup>
-
 </Project>
