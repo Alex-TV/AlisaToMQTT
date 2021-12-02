@@ -1,11 +1,11 @@
-﻿namespace AlisaToMQTTServer.Server.Responses
+﻿namespace AlisaToMQTTServer.Server.Responses;
+
+public interface IResponseContext
 {
-    public interface IResponseContext
-    {
-        string Output { get; }
-        int Code { get; }
-        string ContentType { get; }
-    }
+    string Output { get; }
+    int Code { get; }
+    string ContentType { get; }
 }
+
 
 

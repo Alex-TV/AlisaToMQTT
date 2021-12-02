@@ -2,63 +2,63 @@
 using System.Net;
 using System.Text;
 
-namespace AlisaToMQTTServer.Server
+namespace AlisaToMQTTServer.Server;
+
+public sealed class ServerTest
 {
-    public class ServerTest
+    public bool IsStarted { get; private set; }
+
+    public async Task Start()
     {
-        public bool IsStarted { get; private set; }
+        var httpListener = new HttpListener();
+        httpListener.Prefixes.Add("http://*:8843/");
 
-        public async Task Start()
+        httpListener.Start();
+        IsStarted = true;
+
+        while (IsStarted)
         {
-            var httpListener = new HttpListener();
-            httpListener.Prefixes.Add("http://*:8843/");
+            Console.WriteLine("Ожидание подключений...");
+            var context = await httpListener.GetContextAsync();
 
-            httpListener.Start();
-            IsStarted = true;
+            var request = context.Request;
+            //context.Response.Close();
 
-            while (IsStarted)
+            var keys = request.Headers.AllKeys;
+            foreach (var key in keys)
             {
-                Console.WriteLine("Ожидание подключений...");
-                var context = await httpListener.GetContextAsync();
-
-                var request = context.Request;
-                //context.Response.Close();
-
-                var keys = request.Headers.AllKeys;
-                foreach (var key in keys)
-                {
-                    Console.WriteLine($"key: {key}");
-                    var val = request.Headers.GetValues(key)?.ToList() ?? new List<string>(0);
-                    val.ForEach(v => Console.WriteLine($"val: {v}"));
-                }
-                var buffer = new Memory<byte>();
-
-                var count = await new GZipStream(request.InputStream, CompressionMode.Decompress).ReadAsync(buffer);
-
-
-                var body = Encoding.UTF8.GetString(buffer.ToArray(), 0, count);
-
-                Console.WriteLine($"body: {body}");
-
-                var response = context.Response;
-
-                string responseStr = "<html><head><meta charset='utf8'></head><body>Привет мир!</body></html>";
-                byte[] bufferResponse = Encoding.UTF8.GetBytes(responseStr);
-
-                response.ContentLength64 = buffer.Length;
-                Stream output = response.OutputStream;
-                output.Write(bufferResponse, 0, buffer.Length);
-
-                output.Close();
+                Console.WriteLine($"key: {key}");
+                var val = request.Headers.GetValues(key)?.ToList() ?? new List<string>(0);
+                val.ForEach(v => Console.WriteLine($"val: {v}"));
             }
+            var buffer = new Memory<byte>();
 
-            httpListener.Stop();
-            Console.WriteLine("Обработка подключений завершена");
+            var count = await new GZipStream(request.InputStream, CompressionMode.Decompress).ReadAsync(buffer);
+
+
+            var body = Encoding.UTF8.GetString(buffer.ToArray(), 0, count);
+
+            Console.WriteLine($"body: {body}");
+
+            var response = context.Response;
+
+            string responseStr = "<html><head><meta charset='utf8'></head><body>Привет мир!</body></html>";
+            byte[] bufferResponse = Encoding.UTF8.GetBytes(responseStr);
+
+            response.ContentLength64 = buffer.Length;
+            Stream output = response.OutputStream;
+            output.Write(bufferResponse, 0, buffer.Length);
+
+            output.Close();
         }
 
-        public void Stop()
-        {
-            IsStarted = false;
-        }
+        httpListener.Stop();
+        Console.WriteLine("Обработка подключений завершена");
+    }
+
+    public void Stop()
+    {
+        IsStarted = false;
     }
 }
+

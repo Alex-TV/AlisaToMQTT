@@ -1,31 +1,21 @@
 ﻿using System.Text.Json.Serialization;
 
+namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models;
 
-namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models
+[JsonSerializable(typeof(SmartThingsDeviceInfoModel))]
+public sealed class SmartThingsDeviceInfoModel
 {
-    [JsonSerializable(typeof(SmartThingsDeviceInfoModel))]
-    public class SmartThingsDeviceInfoModel
-    {
-        [JsonInclude]
-        [JsonPropertyName("manufacturer")]
-        public string Manufacturer { get; }
-        [JsonInclude]
-        [JsonPropertyName("model")]
-        public string Model { get; }
-        [JsonInclude]
-        [JsonPropertyName("hw_version")]
-        public string HwVersion { get; }
-        [JsonInclude]
-        [JsonPropertyName("sw_version")]
-        public string SwVersion { get; }
-
-        public SmartThingsDeviceInfoModel(string manufacturer, string model, string hwVersion, string swVersion)
-        {
-            Manufacturer = manufacturer;
-            Model = model;
-            HwVersion = hwVersion;
-            SwVersion = swVersion;
-        }
-
-    }
+    [JsonInclude]
+    [JsonPropertyName("manufacturer")]
+    public string? Manufacturer { get; init; }
+    [JsonInclude]
+    [JsonPropertyName("model")]
+    public string? Model { get; init; }
+    [JsonInclude]
+    [JsonPropertyName("hw_version")]
+    public string? HwVersion { get; init; }
+    [JsonInclude]
+    [JsonPropertyName("sw_version")]
+    public string? SwVersion { get; init; }
 }
+

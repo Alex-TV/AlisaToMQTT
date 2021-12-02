@@ -1,20 +1,20 @@
 ﻿using AlisaToMQTTServer.Server;
 
-namespace AlisaToMQTTServer.Commands.Initialize
+namespace AlisaToMQTTServer.Commands.Initialize;
+
+public sealed class InitializeHttpServerCommand : Command
 {
-    public class InitializeHttpServerCommand : Command
+    private readonly IHttpServer _httpServer;
+
+    public InitializeHttpServerCommand(IHttpServer httpServer)
     {
-        private readonly IHttpServer _httpServer;
+        _httpServer = httpServer;
+    }
 
-        public InitializeHttpServerCommand(IHttpServer httpServer)
-        {
-            _httpServer = httpServer;
-        }
-
-        public override void Execute()
-        {
-            _httpServer.Start();
-            OnCompleted();  
-        }
+    public override void Execute()
+    {
+        _httpServer.Start();
+        OnCompleted();
     }
 }
+

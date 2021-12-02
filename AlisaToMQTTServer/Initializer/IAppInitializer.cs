@@ -1,7 +1,7 @@
-﻿namespace AlisaToMQTTServer.Server.Initializer
+﻿namespace AlisaToMQTTServer.Server.Initializer;
+
+public interface IAppInitializer
 {
-    public interface IAppInitializer
-    {
-        void Initialize();
-    }
+    void Initialize();
 }
+

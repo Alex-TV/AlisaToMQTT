@@ -1,18 +1,18 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models.Signification
+namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models.Signification;
+
+[JsonSerializable(typeof(SmartThingsRangeModel))]
+public sealed class SmartThingsRangeModel
 {
-    [JsonSerializable(typeof(SmartThingsRangeModel))]
-    public class SmartThingsRangeModel
-    {
-        [JsonInclude]
-        [JsonPropertyName("max")]
-        public int Max { get; init; }
-        [JsonInclude]
-        [JsonPropertyName("min")]
-        public int Min { get; init; }
-        [JsonInclude]
-        [JsonPropertyName("precision")]
-        public int Precision { get; init; }
-    }
+    [JsonInclude]
+    [JsonPropertyName("max")]
+    public int Max { get; init; }
+    [JsonInclude]
+    [JsonPropertyName("min")]
+    public int Min { get; init; }
+    [JsonInclude]
+    [JsonPropertyName("precision")]
+    public int Precision { get; init; }
 }
+

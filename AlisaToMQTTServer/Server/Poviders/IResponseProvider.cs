@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+namespace AlisaToMQTTServer.Server.Poviders;
 
-namespace AlisaToMQTTServer.Server.Poviders
-{
-    internal interface IResponseProvider
-    {
-    }
-}
+internal interface IResponseProvider { }
+

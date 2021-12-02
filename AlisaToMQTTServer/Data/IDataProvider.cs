@@ -1,10 +1,10 @@
 ﻿
-namespace AlisaToMQTTServer.Data
-{
-    public interface IDataProvider
-    {
-        void Initialize();
+namespace AlisaToMQTTServer.Data;
 
-        List<DataModel> GetData(string name);
-    }
+public interface IDataProvider
+{
+    void Initialize();
+
+    List<DataModel> GetData(string name);
 }
+

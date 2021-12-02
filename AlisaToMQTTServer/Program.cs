@@ -1,18 +1,18 @@
 ﻿using AlisaToMQTTServer.Server.Initializer;
 
-namespace AlisaToMQTTServer
+namespace AlisaToMQTTServer;
+
+public partial class Program
 {
-    public partial class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            AppBuilder.Build();
+        AppBuilder.Build();
 
-            Console.ReadLine();
+        Console.ReadLine();
 
-            AppBuilder.Close();
-        }
+        AppBuilder.Close();
     }
 }
+
 
 

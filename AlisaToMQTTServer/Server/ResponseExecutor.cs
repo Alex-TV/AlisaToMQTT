@@ -1,8 +1,8 @@
 ﻿
-namespace AlisaToMQTTServer.Server
+namespace AlisaToMQTTServer.Server;
+
+public sealed class ResponseExecutor
 {
-    internal class ResponseExecutor
-    {
-        public void Execute() { }
-    }
+    public void Execute() { }
 }
+

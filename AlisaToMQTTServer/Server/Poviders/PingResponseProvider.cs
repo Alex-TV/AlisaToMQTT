@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 
-namespace AlisaToMQTTServer.Server.Poviders
+namespace AlisaToMQTTServer.Server.Poviders;
+
+public sealed class PingResponseProvider : IResponseProvider
 {
-    internal class PingResponseProvider : IResponseProvider
+    private readonly HttpListenerRequest _request;
+
+    public PingResponseProvider(HttpListenerRequest request)
     {
-        private readonly HttpListenerRequest _request;
-
-        public PingResponseProvider(HttpListenerRequest request)
-        {
-            _request = request;
-        }
-
-        public void Build()
-        {
-
-        }
+        _request = request;
     }
+
+    public void Build() { }
 }
+

@@ -1,9 +1,9 @@
 ﻿
-namespace AlisaToMQTTServer.Server
+namespace AlisaToMQTTServer.Server;
+
+public interface IHttpServer
 {
-    public interface IHttpServer
-    {
-        void Start();
-        void Stop();
-    }
+    void Start();
+    void Stop();
 }
+

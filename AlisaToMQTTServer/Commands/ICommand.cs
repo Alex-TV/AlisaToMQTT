@@ -1,14 +1,14 @@
 ﻿
-namespace AlisaToMQTTServer.Commands
+namespace AlisaToMQTTServer.Commands;
+
+public interface ICommand
 {
-    public interface ICommand
-    {
-        event EventHandler Completed;
-        event EventHandler Failed;
+    event EventHandler Completed;
+    event EventHandler Failed;
 
-        bool IsCompleted { get; }
+    bool IsCompleted { get; }
 
-        void Execute();
-        void Stop();
-    }
+    void Execute();
+    void Stop();
 }
+

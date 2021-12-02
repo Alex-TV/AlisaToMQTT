@@ -1,10 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models.Capabilities
+namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models.Capabilities;
+
+[JsonSerializable(typeof(SmartThingsOnOffCapabilitiesModel))]
+public sealed class SmartThingsOnOffCapabilitiesModel : SmartThingsInfoCapabilitiesModel
 {
-    [JsonSerializable(typeof(SmartThingsOnOffCapabilitiesModel))]
-    public class SmartThingsOnOffCapabilitiesModel : SmartThingsCapabilitiesModel
-    {
-        //"devices.capabilities.on_off",
-    }
+    //"devices.capabilities.on_off",
 }
+

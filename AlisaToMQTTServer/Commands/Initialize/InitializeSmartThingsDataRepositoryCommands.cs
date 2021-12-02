@@ -1,20 +1,20 @@
 ﻿using AlisaToMQTTServer.SmartThings.InfoRepository;
 
-namespace AlisaToMQTTServer.Commands.Initialize
+namespace AlisaToMQTTServer.Commands.Initialize;
+
+public sealed class InitializeSmartThingsDataRepositoryCommands : Command
 {
-    public class InitializeSmartThingsDataRepositoryCommands : Command
+    private readonly ISmartThingsDataInfoRepository _thingsDataRepository;
+
+    public InitializeSmartThingsDataRepositoryCommands(ISmartThingsDataInfoRepository thingsDataRepository)
     {
-        private readonly ISmartThingsDataInfoRepository _thingsDataRepository;
+        _thingsDataRepository = thingsDataRepository;
+    }
 
-        public InitializeSmartThingsDataRepositoryCommands(ISmartThingsDataInfoRepository thingsDataRepository)
-        {
-            _thingsDataRepository = thingsDataRepository;
-        }
-
-        public override void Execute()
-        {
-            _thingsDataRepository.Initialize();
-            OnCompleted();
-        }
+    public override void Execute()
+    {
+        _thingsDataRepository.Initialize();
+        OnCompleted();
     }
 }
+

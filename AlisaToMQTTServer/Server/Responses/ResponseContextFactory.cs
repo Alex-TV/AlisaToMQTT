@@ -1,7 +1,5 @@
 ﻿
-namespace AlisaToMQTTServer.Server.Responses
-{
-    public class ResponseContextFactory : IResponseContextFactory
-    {
-    }
-}
+namespace AlisaToMQTTServer.Server.Responses;
+
+public sealed class ResponseContextFactory : IResponseContextFactory { }
+

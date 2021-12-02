@@ -1,7 +1,4 @@
-﻿namespace AlisaToMQTTServer.Server.Responses
-{
-    public interface IResponseContextFactory
-    {
+﻿namespace AlisaToMQTTServer.Server.Responses;
 
-    }
-}
+public interface IResponseContextFactory { }
+

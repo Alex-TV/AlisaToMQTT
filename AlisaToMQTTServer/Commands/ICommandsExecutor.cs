@@ -1,17 +1,17 @@
 ﻿
-namespace AlisaToMQTTServer.Commands
+namespace AlisaToMQTTServer.Commands;
+
+public interface ICommandsExecutor
 {
-    public interface ICommandsExecutor
-    {
-        event EventHandler CommandCompleted;
-        event EventHandler<ICommand> CommandFailed;
-        event EventHandler AllCompleted;
+    event EventHandler CommandCompleted;
+    event EventHandler<ICommand> CommandFailed;
+    event EventHandler AllCompleted;
 
-        int CommandsCount { get; }
-        float SecondsSinceStartExecution { get; }
+    int CommandsCount { get; }
+    float SecondsSinceStartExecution { get; }
 
-        void AddCommand(ICommand command);
-        void Start(int delayBetweenCommands = 0);
-        void Stop();
-    }
+    void AddCommand(ICommand command);
+    void Start(int delayBetweenCommands = 0);
+    void Stop();
 }
+

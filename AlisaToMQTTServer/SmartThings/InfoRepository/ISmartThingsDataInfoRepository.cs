@@ -1,7 +1,7 @@
-﻿namespace AlisaToMQTTServer.SmartThings.InfoRepository
+﻿namespace AlisaToMQTTServer.SmartThings.InfoRepository;
+
+public interface ISmartThingsDataInfoRepository
 {
-    public interface ISmartThingsDataInfoRepository
-    {
-        void Initialize();
-    }
+    void Initialize();
 }
+

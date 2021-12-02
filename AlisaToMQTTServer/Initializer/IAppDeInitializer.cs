@@ -1,8 +1,8 @@
 ﻿
-namespace AlisaToMQTTServer.Initializer
+namespace AlisaToMQTTServer.Initializer;
+
+public interface IAppDeInitializer
 {
-    public interface IAppDeInitializer
-    {
-        void DeInitializer();
-    }
+    void DeInitializer();
 }
+

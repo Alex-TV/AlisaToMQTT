@@ -1,18 +1,17 @@
 ﻿using System.Text.Json.Serialization;
 
+namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models;
 
-namespace AlisaToMQTTServer.SmartThings.InfoRepository.Models
+[JsonSerializable(typeof(SmartThingsMqttContainerModel))]
+public sealed class SmartThingsMqttContainerModel
 {
-    [JsonSerializable(typeof(SmartThingsMqttContainerModel))]
-    public class SmartThingsMqttContainerModel
-    {
-        [JsonInclude]
-        [JsonPropertyName("mqtt")]
-        public List<SmartThingsMqttModel> Container { get; }
+    [JsonInclude]
+    [JsonPropertyName("mqtt")]
+    public List<SmartThingsMqttModel> Container { get; }
 
-        public SmartThingsMqttContainerModel(List<SmartThingsMqttModel> container)
-        {
-            Container = container;
-        }
+    public SmartThingsMqttContainerModel(List<SmartThingsMqttModel> container)
+    {
+        Container = container;
     }
 }
+
